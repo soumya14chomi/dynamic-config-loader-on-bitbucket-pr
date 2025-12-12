@@ -1,0 +1,80 @@
+
+.config-key-badge {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #00796b;
+    font-size: 12px;
+    margin-left: 8px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #00796b;
+    cursor: pointer;
+    position: relative;
+}
+
+.config-key-badge:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 9999;
+    opacity: 0.9;
+}
+
+
+/* === Config Key Finder styles === */
+.ckf-highlight {
+    background: rgba(255, 235, 59, 0.35); /* amber highlight */
+    border-radius: 3px;
+    padding: 0 3px;
+    cursor: help;
+}
+
+.ckf-highlight[data-ckf="value-highlight"] {
+    /* mark as ours to avoid observer loops */
+}
+
+.ckf-tooltip {
+    position: absolute;
+    z-index: 9999;
+    max-width: 520px;
+    background: #1f2937;      /* graphite */
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.ckf-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ckf-tooltip .ckf-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.ckf-tooltip .ckf-row {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.ckf-tooltip .ckf-label {
+    color: #93c5fd; /* light blue */
+    min-width: 56px;
+}
+

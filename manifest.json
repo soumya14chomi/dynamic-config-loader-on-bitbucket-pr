@@ -1,0 +1,30 @@
+
+{
+  "manifest_version": 3,
+  "name": "Config Key Finder",
+  "version": "1.0",
+  "description": "Highlights config keys in Bitbucket PRs and shows their values from application.properties or application.yml.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://bitbucket.ftscc.net/*"
+  ],
+  "content_scripts": [
+    {
+      "type": "module",
+      "matches": [
+        "https://bitbucket.ftscc.net/*/pull-requests/*",
+        "https://bitbucket.ftscc.net/*/pull-requests/*/diff",
+        "https://bitbucket.ftscc.net/*/pull-requests/*/overview"
+      ],
+      "js": ["src/content.js"],
+      "css": ["src/ui/tooltip.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "options_page": "src/options/options.html"
+}
