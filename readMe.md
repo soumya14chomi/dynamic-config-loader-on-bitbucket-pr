@@ -17,7 +17,7 @@ This helps reviewers quickly understand configuration impacts without searching 
     *   `@Value("${...}")` annotations.
 *   Fetches and parses config files **from the PR itself** (no external branch fetch).
 *   Supports:
-    *   `.properties` and `.yml` files.
+    *   `.properties`  files.
     *   Spring relaxed binding (kebab-case, snake\_case, camelCase).
 *   Inline badges with tooltips showing config values.
 *   Masks sensitive values (passwords, secrets) if enabled.
@@ -41,7 +41,7 @@ This helps reviewers quickly understand configuration impacts without searching 
 1.  Navigate to a **Bitbucket Pull Request** page.
 2.  The extension automatically scans:
     *   Code blocks for config annotations.
-    *   PR file list for `application.yml` or `application.properties`.
+    *   PR file list for `application.properties`.
 3.  If config files exist in the PR:
     *   Fetch and parse them.
     *   Display badges next to detected keys with actual values.
@@ -69,10 +69,6 @@ Click **Extension → Details → Options** to configure:
     ├── src/
     │   ├── content.js           # Main logic for scanning and injecting badges
     │   ├── background.js        # (Optional) Service worker for advanced fetch logic
-    │   ├── parser/
-    │   │   ├── keyNormalizer.js # Normalize keys for relaxed binding
-    │   │   ├── propertiesParser.js
-    │   │   └── yamlParser.js
     │   ├── ui/
     │   │   ├── tooltip.css      # Badge and tooltip styling
     │   └── options/

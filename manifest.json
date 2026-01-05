@@ -4,12 +4,8 @@
   "name": "Config Key Finder",
   "version": "1.0",
   "description": "Highlights config keys in Bitbucket PRs and shows their values from application.properties or application.yml.",
-  "permissions": [
-    "storage"
-  ],
-  "host_permissions": [
-    "https://bitbucket.ftscc.net/*"
-  ],
+  "permissions": ["storage"],
+  "host_permissions": ["https://bitbucket.ftscc.net/*"],
   "content_scripts": [
     {
       "type": "module",
